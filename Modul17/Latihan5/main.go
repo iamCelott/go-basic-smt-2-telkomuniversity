@@ -1,0 +1,29 @@
+package main
+
+import (
+	"fmt"
+	"math/rand"
+)
+
+func main() {
+	var n int
+	var dalam int
+	var pi float64
+
+	fmt.Print("Banyak Topping: ")
+	fmt.Scan(&n)
+
+	for i := 0; i < n; i++ {
+		x := rand.Float64()
+		y := rand.Float64()
+
+		if (x-0.5)*(x-0.5)+(y-0.5)*(y-0.5) <= 0.25 {
+			dalam++
+		}
+	}
+
+	pi = 4 * float64(dalam) / float64(n)
+
+	fmt.Println("Topping pada Pizza:", dalam)
+	fmt.Printf("PI : %.10f\n", pi)
+}
