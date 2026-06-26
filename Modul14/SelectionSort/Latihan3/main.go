@@ -15,16 +15,14 @@ func findMedian(arr []int) int {
 
 func sort(arr *[]int) {
 	pArr := *arr
-	for i := range pArr {
-		var smallest int = i
-		for j := i + 1; j < len(pArr); j++ {
-			if pArr[j] < pArr[smallest] {
-				smallest = j
+	for i := 1; i < len(pArr); i++ {
+		for j := i; j > 0; j-- {
+			if pArr[j] < pArr[j-1] {
+				temp := pArr[j]
+				pArr[j] = pArr[j-1]
+				pArr[j-1] = temp
 			}
 		}
-		prev := pArr[i]
-		pArr[i] = pArr[smallest]
-		pArr[smallest] = prev
 	}
 }
 

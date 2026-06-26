@@ -26,6 +26,10 @@ func main() {
 		}
 		arr = append(arr, num)
 	}
+	if len(arr) <= 1 {
+		fmt.Println("Jumlah data minimal harus 2")
+		return
+	}
 	sort(&arr)
 	gap := 0
 	if len(arr) > 1 {

@@ -1,6 +1,3 @@
-// Dharma Chandra Viriya
-// S1IF-13-02
-// 109082500052
 package main
 
 import "fmt"
